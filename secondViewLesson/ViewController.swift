@@ -16,9 +16,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-       
-        
-        
+      
         super.viewDidLoad()
     }
 
@@ -27,6 +25,12 @@ class ViewController: UIViewController {
         let labelMaximumValue = Int(labelMaximumValue.text ?? "") ?? 100
         
         labelResultValue.text = Int.random(in: labelMinimumValue...labelMaximumValue).formatted()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let settingsVC = segue.destination as? SettingsViewController else { return}
+        settingsVC.minimumValue = labelMinimumValue.text
+        settingsVC.maximumValue = labelMaximumValue.text
     }
 
 }
