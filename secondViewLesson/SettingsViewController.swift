@@ -21,7 +21,10 @@ final class SettingsViewController: UIViewController {
         maximumValueTF.text = maximumValue
     }
     
-    @IBAction func buttonCancelDidTapped(_ sender: Any) {
+    @IBAction func buttonCancelDidTapped() {
+        dismiss(animated: true)
     }
+    
+    
     
 }
