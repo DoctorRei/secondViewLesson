@@ -9,11 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var labelMinimumValue: UILabel!
+    @IBOutlet var labelMaximumValue: UILabel!
+    @IBOutlet var labelResultValue: UILabel!
+    @IBOutlet var buttonResult: UIButton!
+    
+    
     override func viewDidLoad() {
+       
+        
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+    @IBAction func buttonResultTapped() {
+        let labelMinimumValue = Int(labelMinimumValue.text ?? "") ?? 0
+        let labelMaximumValue = Int(labelMaximumValue.text ?? "") ?? 100
+        
+        labelResultValue.text = Int.random(in: labelMinimumValue...labelMaximumValue).formatted()
+    }
 
 }
 
